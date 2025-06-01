@@ -194,7 +194,7 @@ UPSERT INTO Businesses (
 ## 📍 Geospatial Queries
 
 ```sql
-USE YelpDataverse;
+USE YelpDataverseSB;
 
 SELECT *
 FROM Businesses b
@@ -255,7 +255,7 @@ USE YelpDataverseSB;
 
 SELECT r.FULLNAME, COUNT(*) AS c
 FROM Roads r, Businesses b, Reviews a
-WHERE st_distance(r.g, b.g) < 0.0003
+WHERE st_distance(b.g, r.g) < 0.0003
   AND a.business_id = b.business_id
   AND a.stars = 5
 GROUP BY r.LINEARID, r.FULLNAME
@@ -308,7 +308,8 @@ USE YelpDataverseSB;
 
 SELECT VALUE COUNT(1)
 FROM Reviews r, Businesses b
-WHERE similarity_jaccard(word_tokens(r.text), word_tokens(b.name)) > 0.5;
+WHERE r.stars > 3
+AND similarity_jaccard(word_tokens(r.text), word_tokens(b.name)) > 0.5;
 ```
 
 ---
