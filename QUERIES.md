@@ -1,6 +1,6 @@
 # AsterixDB Query Workflow for MDM Seminar
 
-This README documents the complete workflow used to analyze a filtered subset of the Yelp dataset, TIGER2018 Road network dataset using Apache AsterixDB.
+This README documents the complete workflow used to analyze a filtered subset of the Yelp dataset, TIGER2018 Road network dataset using Apache AsterixDB. These can be used in [Get AsterixDB Instance](https://asterixdb.rocks/get_instance.php) until end of MDM 2025.
 
 ---
 
